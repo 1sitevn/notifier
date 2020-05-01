@@ -1,0 +1,34 @@
+{
+  "name": "onesite/notifier",
+  "description": "Send notification v1.0.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "1Site.vn",
+      "email": "hotro@1site.vn",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "guzzlehttp/guzzle": "^6.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "OneSite\\Notifier\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "OneSite\\Notifier\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x.x-dev"
+    }
+  }
+}
