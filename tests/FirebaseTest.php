@@ -49,7 +49,7 @@ class FirebaseTest extends TestCase
         /**
          * @var Response $response
          */
-        $response = $this->notify->send($_ENV('NOTIFIER_FIREBASE_TO_DEVICE'), [
+        $response = $this->notify->send(env('NOTIFIER_FIREBASE_TO_DEVICE'), [
             'title' => 'Test send to Device',
             'description' => 'Test send to Device',
             'type' => 'test_device'
@@ -70,7 +70,7 @@ class FirebaseTest extends TestCase
         /**
          * @var Response $response
          */
-        $response = $this->notify->send($_ENV('NOTIFIER_FIREBASE_TO_TOPIC'), [
+        $response = $this->notify->send(env('NOTIFIER_FIREBASE_TO_TOPIC'), [
             'title' => 'Test send to Topic',
             'description' => 'Test send to Topic',
             'type' => 'test_topic'
