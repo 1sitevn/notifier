@@ -1,7 +1,5 @@
 <?php
 
-use OneSite\Notifier\Tests\ConfigLoader;
-
 if (!function_exists('config')) {
     /**
      * @param $key
@@ -44,8 +42,6 @@ if (!function_exists('env')) {
      */
     function env($key, $default = null)
     {
-        $configs = ConfigLoader::getInstance()->getConfigs();
-
-        return !empty($configs[$key]) ? $configs[$key] : $default;
+        return !empty($_ENV[$key]) ? $_ENV[$key] : $default;
     }
 }
