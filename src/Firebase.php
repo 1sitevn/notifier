@@ -13,6 +13,51 @@ class Firebase implements Notification
 {
 
     /**
+     * @var Client
+     */
+    private $client;
+
+    /**
+     * @var string
+     */
+    private $fcmUrl = "https://fcm.googleapis.com/fcm";
+    /**
+     * @var string
+     */
+    private $iidUrl = "https://iid.googleapis.com/iid";
+
+    /**
+     * @var null
+     */
+    private $apiKey = null;
+
+    /**
+     * Firebase constructor.
+     */
+    public function __construct()
+    {
+        $this->client = new Client();
+
+        $this->apiKey = Config::get('notifier.fcm.api_key');
+    }
+
+    /**
+     * @return null
+     */
+    public function getApiKey()
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * @param null $apiKey
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+    }
+
+    /**
      * @param $to
      * @param $data
      * @param array $options
@@ -20,19 +65,13 @@ class Firebase implements Notification
      */
     public function send($to, $data, $options = [])
     {
-        $url = "https://fcm.googleapis.com/fcm/send";
-
-        $headers = [
-            "Authorization" => "key=AAAA3JvgGnU:APA91bHIwO_n7R6z2oWV-m08dG4-mm2uPCE7CYQG_QBsfrz5QY1lzsSzfcSi34h8Bli3rKBKAoN_0PIY-w4KC1BvYd1jUR4jvjT66aJN-cYlWHRfjxXJ6Yb1dZL4X3uBBaY8zVBj3Usw",
-            "Content-Type" => "application/json"
-        ];
-
-        $client = new Client();
-
-        return $client->request('POST', $url, [
+        return $this->client->request('POST', $this->fcmUrl . "/send", [
             'http_errors' => false,
             'verify' => false,
-            'headers' => $headers,
+            'headers' => [
+                "Authorization" => "key=" . $this->getApiKey(),
+                "Content-Type" => "application/json"
+            ],
             'body' => json_encode([
                 'to' => $to,
                 'content-available' => true,

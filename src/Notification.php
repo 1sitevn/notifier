@@ -8,6 +8,8 @@ namespace OneSite\Notifier;
  */
 interface Notification
 {
+    const TYPE_FIREBASE = 'FIREBASE';
+
     /**
      * @param $title
      * @param $body

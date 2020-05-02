@@ -8,30 +8,52 @@ use GuzzleHttp\Psr7\Response;
 use OneSite\Notifier\Firebase;
 use PHPUnit\Framework\TestCase;
 
+require_once "helpers.php";
+
 /**
  * Class FirebaseTest
  * @package OneSite\Notifier\Tests
  */
 class FirebaseTest extends TestCase
 {
+    /**
+     * @var void|null
+     */
+    private $notify;
+
+    /**
+     *
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->notify = new Firebase();
+    }
+
+    /**
+     *
+     */
+    public function tearDown(): void
+    {
+        $this->notify = null;
+
+        parent::tearDown();
+    }
 
     /**
      *
      */
     public function testSendToDevice()
     {
-        $firebase = new Firebase();
-
-        $body = [
-            'title' => 'Test send to Device',
-            'description' => 'Test send to Device',
-            'type' => 'test_device'
-        ];
-
         /**
          * @var Response $response
          */
-        $response = $firebase->send($_ENV['NOTIFIER_FIREBASE_TO_DEVICE'], $body);
+        $response = $this->notify->send(env('NOTIFIER_FIREBASE_TO_DEVICE'), [
+            'title' => 'Test send to Device',
+            'description' => 'Test send to Device',
+            'type' => 'test_device'
+        ]);
 
         $this->assertEquals(200, $response->getStatusCode());
 
@@ -45,18 +67,14 @@ class FirebaseTest extends TestCase
      */
     public function testSendToTopic()
     {
-        $firebase = new Firebase();
-
-        $body = [
-            'title' => 'Test send to Topic',
-            'description' => 'Test send to Topic',
-            'type' => 'test_topic'
-        ];
-
         /**
          * @var Response $response
          */
-        $response = $firebase->send($_ENV['NOTIFIER_FIREBASE_TO_TOPIC'], $body);
+        $response = $this->notify->send(env('NOTIFIER_FIREBASE_TO_TOPIC'), [
+            'title' => 'Test send to Topic',
+            'description' => 'Test send to Topic',
+            'type' => 'test_topic'
+        ]);
 
         $this->assertEquals(200, $response->getStatusCode());
     }
