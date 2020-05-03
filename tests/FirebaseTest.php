@@ -13,6 +13,7 @@ require_once "helpers.php";
 /**
  * Class FirebaseTest
  * @package OneSite\Notifier\Tests
+ * PHPUnit test: vendor/bin/phpunit tests/FirebaseTest.php
  */
 class FirebaseTest extends TestCase
 {
@@ -42,7 +43,7 @@ class FirebaseTest extends TestCase
     }
 
     /**
-     *
+     * PHPUnit test: vendor/bin/phpunit --filter testSendToDevice tests/FirebaseTest.php
      */
     public function testSendToDevice()
     {
@@ -63,7 +64,7 @@ class FirebaseTest extends TestCase
     }
 
     /**
-     *
+     * PHPUnit test: vendor/bin/phpunit --filter testSendToTopic tests/FirebaseTest.php
      */
     public function testSendToTopic()
     {
@@ -74,6 +75,54 @@ class FirebaseTest extends TestCase
             'title' => 'Test send to Topic',
             'description' => 'Test send to Topic',
             'type' => 'test_topic'
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /**
+     * PHPUnit test: vendor/bin/phpunit --filter testCreateTopic tests/FirebaseTest.php
+     */
+    public function testCreateTopic()
+    {
+        /**
+         * @var Response $response
+         */
+        $response = $this->notify->createTopic('/topics/test', [
+            env('NOTIFIER_FIREBASE_TO_DEVICE')
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /**
+     * PHPUnit test: vendor/bin/phpunit --filter testGetTopics tests/FirebaseTest.php
+     */
+    public function testGetTopics()
+    {
+        /**
+         * @var Response $response
+         */
+        $response = $this->notify->getTopics(env('NOTIFIER_FIREBASE_TO_DEVICE'));
+
+        $httpStatusCode = $response->getStatusCode();
+        if (200 == $httpStatusCode) {
+            print_r("\n" . $response->getBody()->getContents());
+        }
+
+        $this->assertEquals(200, $response->getStatusCode(), $response->getBody()->getContents());
+    }
+
+    /**
+     * PHPUnit test: vendor/bin/phpunit --filter testRemoveTopic tests/FirebaseTest.php
+     */
+    public function testRemoveTopic()
+    {
+        /**
+         * @var Response $response
+         */
+        $response = $this->notify->removeTopic('/topics/test', [
+            env('NOTIFIER_FIREBASE_TO_DEVICE')
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());

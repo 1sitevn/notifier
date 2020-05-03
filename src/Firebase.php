@@ -81,4 +81,64 @@ class Firebase implements Notification
         ]);
     }
 
+    /**
+     * @param $topic
+     * @param array $devices
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function createTopic($topic, $devices = [])
+    {
+        return $this->client->request('POST', $this->iidUrl . "/v1:batchAdd", [
+            'http_errors' => false,
+            'verify' => false,
+            'headers' => [
+                "Authorization" => "key=" . $this->getApiKey(),
+                "Content-Type" => "application/json"
+            ],
+            'body' => json_encode([
+                'to' => $topic,
+                'registration_tokens' => $devices
+            ])
+        ]);
+    }
+
+    /**
+     * @param $deviceId
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function getTopics($deviceId)
+    {
+        return $this->client->request('GET', $this->iidUrl . '/info/' . $deviceId, [
+            'http_errors' => false,
+            'verify' => false,
+            'headers' => [
+                "Authorization" => "key=" . $this->getApiKey(),
+                "Content-Type" => "application/json"
+            ],
+            'query' => [
+                'details' => true
+            ]
+        ]);
+    }
+
+    /**
+     * @param $topic
+     * @param array $devices
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function removeTopic($topic, $devices = [])
+    {
+        return $this->client->request('POST', $this->iidUrl . "/v1:batchRemove", [
+            'http_errors' => false,
+            'verify' => false,
+            'headers' => [
+                "Authorization" => "key=" . $this->getApiKey(),
+                "Content-Type" => "application/json"
+            ],
+            'body' => json_encode([
+                'to' => $topic,
+                'registration_tokens' => $devices
+            ])
+        ]);
+    }
 }
