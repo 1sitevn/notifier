@@ -32,13 +32,20 @@ class Firebase implements Notification
     private $apiKey = null;
 
     /**
+     * @var Config|null
+     */
+    private $configs = null;
+
+    /**
      * Firebase constructor.
      */
     public function __construct()
     {
         $this->client = new Client();
 
-        $this->apiKey = Config::get('notifier.fcm.api_key');
+        $this->configs = Config::getInstance();
+
+        $this->apiKey = $this->configs->get('notifier.fcm.api_key');
     }
 
     /**
