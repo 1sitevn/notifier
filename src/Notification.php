@@ -9,6 +9,7 @@ namespace OneSite\Notifier;
 interface Notification
 {
     const TYPE_FIREBASE = 'FIREBASE';
+    const TYPE_CALL_CENTER = 'CALL_CENTER';
 
     /**
      * @param $title

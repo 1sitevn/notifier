@@ -12,6 +12,15 @@ if (!function_exists('config')) {
             'notifier' => [
                 'fcm' => [
                     'api_key' => env('NOTIFIER_FIREBASE_KEY', null)
+                ],
+
+                'call_center' => [
+                    'username' => env('NOTIFIER_CALL_CENTER_USERNAME', null),
+                    'password' => env('NOTIFIER_CALL_CENTER_PASSWORD', null),
+                    'api_url' => env('NOTIFIER_CALL_CENTER_API_URL', null),
+                    'secret_key' => env('NOTIFIER_CALL_CENTER_SECRET_KEY', null),
+                    'access_token' => env('NOTIFIER_CALL_CENTER_ACCESS_TOKEN', null),
+                    'campaign_id' => env('NOTIFIER_CALL_CENTER_CAMPAIGN_ID', null),
                 ]
             ]
         ];

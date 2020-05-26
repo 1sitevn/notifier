@@ -7,8 +7,18 @@
     </testsuites>
     <php>
         <includePath>.</includePath>
+
         <env name="NOTIFIER_FIREBASE_KEY" value=""/>
         <env name="NOTIFIER_FIREBASE_TO_DEVICE" value=""/>
         <env name="NOTIFIER_FIREBASE_TO_TOPIC" value=""/>
+
+        <env name="NOTIFIER_CALL_CENTER_PHONE_TEST" value=""/>
+        <env name="NOTIFIER_CALL_CENTER_USERNAME" value=""/>
+        <env name="NOTIFIER_CALL_CENTER_PASSWORD" value=""/>
+        <env name="NOTIFIER_CALL_CENTER_API_URL" value="https://es.aicallcenter.vn/api/"/>
+        <env name="NOTIFIER_CALL_CENTER_SECRET_KEY" value=""/>
+        <env name="NOTIFIER_CALL_CENTER_ACCESS_TOKEN" value=""/>
+        <env name="NOTIFIER_CALL_CENTER_CAMPAIGN_ID" value=""/>
+
     </php>
 </phpunit>
