@@ -54,8 +54,10 @@ class CallCenter implements Notification
         $this->campaignId = $this->configs->get('notifier.call_center.campaign_id');
     }
 
+
     /**
      * @return \Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAccessToken()
     {
@@ -64,11 +66,13 @@ class CallCenter implements Notification
         return $this->client->request('GET', $apiUrl);
     }
 
+
     /**
      * @param $to
      * @param $data
      * @param array $options
-     * @return array|mixed
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function send($to, $data, $options = [])
     {

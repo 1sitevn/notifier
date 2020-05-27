@@ -20,5 +20,8 @@
         <env name="NOTIFIER_CALL_CENTER_ACCESS_TOKEN" value=""/>
         <env name="NOTIFIER_CALL_CENTER_CAMPAIGN_ID" value=""/>
 
+        <env name="NOTIFIER_TWILIO_ID" value=""/>
+        <env name="NOTIFIER_TWILIO_TOKEN" value=""/>
+        <env name="NOTIFIER_TWILIO_FROM" value=""/>
     </php>
 </phpunit>

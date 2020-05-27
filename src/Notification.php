@@ -10,12 +10,14 @@ interface Notification
 {
     const TYPE_FIREBASE = 'FIREBASE';
     const TYPE_CALL_CENTER = 'CALL_CENTER';
+    const TYPE_TWILIO = 'TWILIO';
+
 
     /**
-     * @param $title
-     * @param $body
+     * @param $to
+     * @param $data
      * @param array $options
      * @return mixed
      */
-    public function send($title, $body, $options = []);
+    public function send($to, $data, $options = []);
 }

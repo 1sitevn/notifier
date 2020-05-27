@@ -21,6 +21,12 @@ if (!function_exists('config')) {
                     'secret_key' => env('NOTIFIER_CALL_CENTER_SECRET_KEY', null),
                     'access_token' => env('NOTIFIER_CALL_CENTER_ACCESS_TOKEN', null),
                     'campaign_id' => env('NOTIFIER_CALL_CENTER_CAMPAIGN_ID', null),
+                ],
+
+                'twilio' => [
+                    'id' => env('NOTIFIER_TWILIO_ID', null),
+                    'token' => env('NOTIFIER_TWILIO_TOKEN', null),
+                    'from' => env('NOTIFIER_TWILIO_FROM', null),
                 ]
             ]
         ];

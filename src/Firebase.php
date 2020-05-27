@@ -68,7 +68,8 @@ class Firebase implements Notification
      * @param $to
      * @param $data
      * @param array $options
-     * @return array|mixed
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function send($to, $data, $options = [])
     {
@@ -92,6 +93,7 @@ class Firebase implements Notification
      * @param $topic
      * @param array $devices
      * @return \Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function createTopic($topic, $devices = [])
     {
@@ -109,9 +111,11 @@ class Firebase implements Notification
         ]);
     }
 
+
     /**
      * @param $deviceId
      * @return \Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTopics($deviceId)
     {
@@ -128,10 +132,12 @@ class Firebase implements Notification
         ]);
     }
 
+
     /**
      * @param $topic
      * @param array $devices
      * @return \Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function removeTopic($topic, $devices = [])
     {
