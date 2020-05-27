@@ -15,7 +15,7 @@
         <env name="NOTIFIER_CALL_CENTER_PHONE_TEST" value=""/>
         <env name="NOTIFIER_CALL_CENTER_USERNAME" value=""/>
         <env name="NOTIFIER_CALL_CENTER_PASSWORD" value=""/>
-        <env name="NOTIFIER_CALL_CENTER_API_URL" value="https://es.aicallcenter.vn/api/"/>
+        <env name="NOTIFIER_CALL_CENTER_API_URL" value=""/>
         <env name="NOTIFIER_CALL_CENTER_SECRET_KEY" value=""/>
         <env name="NOTIFIER_CALL_CENTER_ACCESS_TOKEN" value=""/>
         <env name="NOTIFIER_CALL_CENTER_CAMPAIGN_ID" value=""/>
@@ -23,5 +23,10 @@
         <env name="NOTIFIER_TWILIO_ID" value=""/>
         <env name="NOTIFIER_TWILIO_TOKEN" value=""/>
         <env name="NOTIFIER_TWILIO_FROM" value=""/>
+
+        <env name="NOTIFIER_FUNTAP_PHONE_TEST" value=""/>
+        <env name="NOTIFIER_FUNTAP_API_URL" value=""/>
+        <env name="NOTIFIER_FUNTAP_API_KEY" value=""/>
+        <env name="NOTIFIER_FUNTAP_COMPANY_ID" value=""/>
     </php>
 </phpunit>

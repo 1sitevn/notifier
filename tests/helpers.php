@@ -27,6 +27,12 @@ if (!function_exists('config')) {
                     'id' => env('NOTIFIER_TWILIO_ID', null),
                     'token' => env('NOTIFIER_TWILIO_TOKEN', null),
                     'from' => env('NOTIFIER_TWILIO_FROM', null),
+                ],
+
+                'funtap' => [
+                    'api_url' => env('NOTIFIER_FUNTAP_API_URL', null),
+                    'api_key' => env('NOTIFIER_FUNTAP_API_KEY', null),
+                    'company_id' => env('NOTIFIER_FUNTAP_COMPANY_ID', null),
                 ]
             ]
         ];
