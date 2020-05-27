@@ -47,7 +47,7 @@ class TwilioTest extends TestCase
          * @var Response $response
          */
         $response = $this->notify->send(env('NOTIFIER_TWILIO_PHONE_TEST'), [
-            'message' => 'Ma xac thuc cua ban la 123456.'
+            'body' => 'Ma xac thuc cua ban la 123456.'
         ]);
 
         echo "\n\n" . json_encode($response);

@@ -60,7 +60,7 @@ class Twilio implements Notification
             $phone,
             [
                 'from' => $this->from,
-                'body' => !empty($data['message']) ? $data['message'] : ''
+                'body' => !empty($data['body']) ? $data['body'] : ''
             ]
         );
     }
