@@ -51,7 +51,7 @@ class CallCenterTest extends TestCase
          * @var Response $response
          */
         $response = $this->notify->send(env('NOTIFIER_CALL_CENTER_PHONE_TEST'), [
-            'otp' => '123456'
+            'body' => '123456'
         ]);
 
         $data = json_decode($response->getBody()->getContents());

@@ -88,7 +88,7 @@ class CallCenter implements Notification
                 'contacts' => [
                     [
                         'phone_number' => $to,
-                        'otp_code' => !empty($data['otp']) ? $data['otp'] : null
+                        'otp_code' => !empty($data['body']) ? $data['body'] : null
                     ]
                 ]
             ])
