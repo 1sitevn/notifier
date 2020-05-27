@@ -1,16 +1,19 @@
 <?php
 
 
-namespace OneSite\Notifier;
+namespace OneSite\Notifier\Services;
 
 
+use OneSite\Notifier\Config;
+use OneSite\Notifier\Contracts\NotificationInterface;
 use Twilio\Rest\Client;
 
+
 /**
- * Class Twilio
- * @package OneSite\Notifier
+ * Class TwilioService
+ * @package OneSite\Notifier\Services
  */
-class Twilio implements Notification
+class TwilioService implements NotificationInterface
 {
     /**
      * @var array|mixed|null

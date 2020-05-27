@@ -5,7 +5,7 @@ namespace OneSite\Notifier\Tests;
 
 
 use GuzzleHttp\Psr7\Response;
-use OneSite\Notifier\Firebase;
+use OneSite\Notifier\Services\FirebaseService;
 use PHPUnit\Framework\TestCase;
 
 require_once "helpers.php";
@@ -29,7 +29,7 @@ class FirebaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->notify = new Firebase();
+        $this->notify = new FirebaseService();
     }
 
     /**

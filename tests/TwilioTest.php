@@ -5,12 +5,16 @@ namespace OneSite\Notifier\Tests;
 
 
 use GuzzleHttp\Psr7\Response;
-use OneSite\Notifier\Twilio;
+use OneSite\Notifier\Services\TwilioService;
 use PHPUnit\Framework\TestCase;
 
 require_once "helpers.php";
 
 
+/**
+ * Class TwilioTest
+ * @package OneSite\Notifier\Tests
+ */
 class TwilioTest extends TestCase
 {
     /**
@@ -25,7 +29,7 @@ class TwilioTest extends TestCase
     {
         parent::setUp();
 
-        $this->notify = new Twilio();
+        $this->notify = new TwilioService();
     }
 
     /**

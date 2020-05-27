@@ -1,15 +1,18 @@
 <?php
 
-namespace OneSite\Notifier;
+namespace OneSite\Notifier\Services;
 
 
 use GuzzleHttp\Client;
+use OneSite\Notifier\Config;
+use OneSite\Notifier\Contracts\NotificationInterface;
+
 
 /**
- * Class Firebase
- * @package OneSite\Notifier
+ * Class FirebaseService
+ * @package OneSite\Notifier\Services
  */
-class Firebase implements Notification
+class FirebaseService implements NotificationInterface
 {
 
     /**
