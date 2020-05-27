@@ -5,7 +5,7 @@ namespace OneSite\Notifier\Tests;
 
 
 use GuzzleHttp\Psr7\Response;
-use OneSite\Notifier\CallCenter;
+use OneSite\Notifier\Services\CallCenterService;
 use PHPUnit\Framework\TestCase;
 
 require_once "helpers.php";
@@ -29,7 +29,7 @@ class CallCenterTest extends TestCase
     {
         parent::setUp();
 
-        $this->notify = new CallCenter();
+        $this->notify = new CallCenterService();
     }
 
     /**

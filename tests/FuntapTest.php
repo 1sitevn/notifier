@@ -5,7 +5,7 @@ namespace OneSite\Notifier\Tests;
 
 
 use GuzzleHttp\Psr7\Response;
-use OneSite\Notifier\Funtap;
+use OneSite\Notifier\Services\FuntapService;
 use PHPUnit\Framework\TestCase;
 
 require_once "helpers.php";
@@ -29,7 +29,7 @@ class FuntapTest extends TestCase
     {
         parent::setUp();
 
-        $this->notify = new Funtap();
+        $this->notify = new FuntapService();
     }
 
     /**

@@ -1,15 +1,18 @@
 <?php
 
 
-namespace OneSite\Notifier;
+namespace OneSite\Notifier\Services;
 
 use GuzzleHttp\Client;
+use OneSite\Notifier\Config;
+use OneSite\Notifier\Contracts\NotificationInterface;
+
 
 /**
- * Class Funtap
- * @package OneSite\Notifier
+ * Class FuntapService
+ * @package OneSite\Notifier\Services
  */
-class Funtap implements Notification
+class FuntapService implements NotificationInterface
 {
 
 

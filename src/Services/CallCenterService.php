@@ -1,15 +1,18 @@
 <?php
 
-namespace OneSite\Notifier;
+namespace OneSite\Notifier\Services;
 
 
 use GuzzleHttp\Client;
+use OneSite\Notifier\Config;
+use OneSite\Notifier\Contracts\NotificationInterface;
+
 
 /**
- * Class CallCenter
- * @package OneSite\Notifier
+ * Class CallCenterService
+ * @package OneSite\Notifier\Services
  */
-class CallCenter implements Notification
+class CallCenterService implements NotificationInterface
 {
 
     /**
