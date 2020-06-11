@@ -37,10 +37,6 @@ class CallCenterService implements NotificationInterface
      */
     private $campaignId = null;
 
-    /**
-     * @var Config|null
-     */
-    private $configs = null;
 
     /**
      * Firebase constructor.
@@ -49,12 +45,10 @@ class CallCenterService implements NotificationInterface
     {
         $this->client = new Client();
 
-        $this->configs = Config::getInstance();
-
-        $this->apiUrl = $this->configs->get('notifier.call_center.api_url');
-        $this->secretKey = $this->configs->get('notifier.call_center.secret_key');
-        $this->accessToken = $this->configs->get('notifier.call_center.access_token');
-        $this->campaignId = $this->configs->get('notifier.call_center.campaign_id');
+        $this->apiUrl = config('notifier.call_center.api_url');
+        $this->secretKey = config('notifier.call_center.secret_key');
+        $this->accessToken = config('notifier.call_center.access_token');
+        $this->campaignId = config('notifier.call_center.campaign_id');
     }
 
 

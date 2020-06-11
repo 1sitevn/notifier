@@ -8,14 +8,12 @@ use GuzzleHttp\Psr7\Response;
 use OneSite\Notifier\Services\CallCenterService;
 use PHPUnit\Framework\TestCase;
 
-require_once "helpers.php";
-
 
 /**
- * Class CallCenterTest
+ * Class CallCenterServiceTest
  * @package OneSite\Notifier\Tests
  */
-class CallCenterTest extends TestCase
+class CallCenterServiceTest extends TestCase
 {
     /**
      * @var void|null
@@ -43,7 +41,7 @@ class CallCenterTest extends TestCase
     }
 
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testSendToDevice tests/CallCenterTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testSendToDevice()
     {
@@ -64,7 +62,7 @@ class CallCenterTest extends TestCase
     }
 
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testGetAccessToken tests/CallCenterTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testGetAccessToken()
     {

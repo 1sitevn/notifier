@@ -8,14 +8,11 @@ use GuzzleHttp\Psr7\Response;
 use OneSite\Notifier\Services\FuntapService;
 use PHPUnit\Framework\TestCase;
 
-require_once "helpers.php";
-
-
 /**
- * Class FuntapTest
+ * Class FuntapServiceTest
  * @package OneSite\Notifier\Tests
  */
-class FuntapTest extends TestCase
+class FuntapServiceTest extends TestCase
 {
     /**
      * @var void|null
@@ -42,8 +39,9 @@ class FuntapTest extends TestCase
         parent::tearDown();
     }
 
+
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testSendToDevice tests/FuntapTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testSendToDevice()
     {

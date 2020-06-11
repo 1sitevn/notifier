@@ -8,14 +8,12 @@ use GuzzleHttp\Psr7\Response;
 use OneSite\Notifier\Services\FirebaseService;
 use PHPUnit\Framework\TestCase;
 
-require_once "helpers.php";
-
 /**
- * Class FirebaseTest
+ * Class FirebaseServiceTest
  * @package OneSite\Notifier\Tests
  * PHPUnit test: vendor/bin/phpunit tests/FirebaseTest.php
  */
-class FirebaseTest extends TestCase
+class FirebaseServiceTest extends TestCase
 {
     /**
      * @var void|null
@@ -43,7 +41,7 @@ class FirebaseTest extends TestCase
     }
 
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testSendToDevice tests/FirebaseTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testSendToDevice()
     {
@@ -63,8 +61,9 @@ class FirebaseTest extends TestCase
         $this->assertEquals(1, $data->success);
     }
 
+
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testSendToTopic tests/FirebaseTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testSendToTopic()
     {
@@ -80,8 +79,9 @@ class FirebaseTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
+
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testCreateTopic tests/FirebaseTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testCreateTopic()
     {
@@ -96,7 +96,7 @@ class FirebaseTest extends TestCase
     }
 
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testGetTopics tests/FirebaseTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testGetTopics()
     {
@@ -114,7 +114,7 @@ class FirebaseTest extends TestCase
     }
 
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testRemoveTopic tests/FirebaseTest.php
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testRemoveTopic()
     {

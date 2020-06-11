@@ -28,5 +28,11 @@
         <env name="NOTIFIER_FUNTAP_API_URL" value=""/>
         <env name="NOTIFIER_FUNTAP_API_KEY" value=""/>
         <env name="NOTIFIER_FUNTAP_COMPANY_ID" value=""/>
+
+        <env name="NOTIFIER_CMC_TEST" value=""/>
+        <env name="NOTIFIER_CMC_API_URL" value=""/>
+        <env name="NOTIFIER_CMC_BRAND_NAME" value=""/>
+        <env name="NOTIFIER_CMC_USERNAME" value=""/>
+        <env name="NOTIFIER_CMC_PASSWORD" value=""/>
     </php>
 </phpunit>

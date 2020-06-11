@@ -8,14 +8,11 @@ use GuzzleHttp\Psr7\Response;
 use OneSite\Notifier\Services\TwilioService;
 use PHPUnit\Framework\TestCase;
 
-require_once "helpers.php";
-
-
 /**
- * Class TwilioTest
+ * Class TwilioServiceTest
  * @package OneSite\Notifier\Tests
  */
-class TwilioTest extends TestCase
+class TwilioServiceTest extends TestCase
 {
     /**
      * @var void|null
@@ -43,7 +40,8 @@ class TwilioTest extends TestCase
     }
 
     /**
-     * PHPUnit test: vendor/bin/phpunit --filter testSendToDevice tests/TwilioTest.php
+     * @throws \Twilio\Exceptions\ConfigurationException
+     * @throws \Twilio\Exceptions\TwilioException
      */
     public function testSendToDevice()
     {

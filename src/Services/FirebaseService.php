@@ -4,7 +4,6 @@ namespace OneSite\Notifier\Services;
 
 
 use GuzzleHttp\Client;
-use OneSite\Notifier\Config;
 use OneSite\Notifier\Contracts\NotificationInterface;
 
 
@@ -35,20 +34,13 @@ class FirebaseService implements NotificationInterface
     private $apiKey = null;
 
     /**
-     * @var Config|null
-     */
-    private $configs = null;
-
-    /**
      * Firebase constructor.
      */
     public function __construct()
     {
         $this->client = new Client();
 
-        $this->configs = Config::getInstance();
-
-        $this->apiKey = $this->configs->get('notifier.fcm.api_key');
+        $this->apiKey = config('notifier.fcm.api_key');
     }
 
     /**

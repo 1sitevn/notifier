@@ -4,7 +4,6 @@
 namespace OneSite\Notifier\Services;
 
 
-use OneSite\Notifier\Config;
 use OneSite\Notifier\Contracts\NotificationInterface;
 use Twilio\Rest\Client;
 
@@ -29,20 +28,13 @@ class TwilioService implements NotificationInterface
     private $from = null;
 
     /**
-     * @var Config|null
-     */
-    private $configs = null;
-
-    /**
      * Firebase constructor.
      */
     public function __construct()
     {
-        $this->configs = Config::getInstance();
-
-        $this->serviceId = $this->configs->get('notifier.twilio.id');
-        $this->token = $this->configs->get('notifier.twilio.token');
-        $this->from = $this->configs->get('notifier.twilio.from');
+        $this->serviceId = config('notifier.twilio.id');
+        $this->token = config('notifier.twilio.token');
+        $this->from = config('notifier.twilio.from');
     }
 
     /**

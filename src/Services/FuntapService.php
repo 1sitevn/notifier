@@ -36,22 +36,15 @@ class FuntapService implements NotificationInterface
     private $companyId = null;
 
     /**
-     * @var Config|null
-     */
-    private $configs = null;
-
-    /**
      * Firebase constructor.
      */
     public function __construct()
     {
         $this->client = new Client();
 
-        $this->configs = Config::getInstance();
-
-        $this->apiUrl = $this->configs->get('notifier.funtap.api_url');
-        $this->apiKey = $this->configs->get('notifier.funtap.api_key');
-        $this->companyId = $this->configs->get('notifier.funtap.company_id');
+        $this->apiUrl = config('notifier.funtap.api_url');
+        $this->apiKey = config('notifier.funtap.api_key');
+        $this->companyId = config('notifier.funtap.company_id');
     }
 
 
