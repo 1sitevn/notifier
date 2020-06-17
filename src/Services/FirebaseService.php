@@ -68,6 +68,18 @@ class FirebaseService implements NotificationInterface
      */
     public function send($to, $data, $options = [])
     {
+        $body = [
+            'content-available' => true,
+            'priority' => 'HIGH',
+            'data' => $data
+        ];
+
+        if (is_array($to)) {
+            $body['registration_ids'] = $to;
+        } else {
+            $body['to'] = $to;
+        }
+
         return $this->client->request('POST', $this->fcmUrl . "/send", [
             'http_errors' => false,
             'verify' => false,
@@ -75,12 +87,7 @@ class FirebaseService implements NotificationInterface
                 "Authorization" => "key=" . $this->getApiKey(),
                 "Content-Type" => "application/json"
             ],
-            'body' => json_encode([
-                'to' => $to,
-                'content-available' => true,
-                'priority' => 'HIGH',
-                'data' => $data
-            ])
+            'body' => json_encode($body)
         ]);
     }
 

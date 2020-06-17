@@ -36,7 +36,7 @@ limitations under the License.
     <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
             <div
-                class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+                    class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
                 <h3>Firebase Cloud Messaging</h3>
             </div>
         </div>
@@ -47,7 +47,7 @@ limitations under the License.
 
             <!-- Container for the Table of content -->
             <div
-                class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                    class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                     <!-- div to display the generated Instance ID token -->
                     <div id="token_div" style="display: none;">
@@ -85,15 +85,15 @@ limitations under the License.
 
 <script>
     // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyDtioKHCI8AA2gJFu9wPxdm9QMokTKf19E",
-        authDomain: "search-job-c7b5a.firebaseapp.com",
-        databaseURL: "https://search-job-c7b5a.firebaseio.com",
-        projectId: "search-job-c7b5a",
-        storageBucket: "search-job-c7b5a.appspot.com",
-        messagingSenderId: "576969779941",
-        appId: "1:576969779941:web:4e607628c3bea19c0b420c",
-        measurementId: "G-TZFKDHBMGV"
+    const firebaseConfig = {
+        apiKey: "AIzaSyDuhgBekgxbcCYoD0FnWExGIEGrs4iI2c8",
+        authDomain: "pay-f2481.firebaseapp.com",
+        databaseURL: "https://pay-f2481.firebaseio.com",
+        projectId: "pay-f2481",
+        storageBucket: "pay-f2481.appspot.com",
+        messagingSenderId: "1051695176445",
+        appId: "1:1051695176445:web:a0b0ecd256a57120af7c94",
+        measurementId: "G-5QHQK106S9"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -107,7 +107,7 @@ limitations under the License.
     // [END get_messaging_object]
     // [START set_public_vapid_key]
     // Add the public key generated from the console here.
-    messaging.usePublicVapidKey('BF7QccojuilPA47elz2RsOfXKZ3500hCwXhJMz5KuB-iUmUTHxkfLUtM9A9DyNTg_Og5duupp7LArUDEie9ioJ0');
+    messaging.usePublicVapidKey('BOWUpVzWCUUoPAXg8HjywAHDqNkr1HY1hzqxHoCnQ_uwE17ePKYl8O49xqb83pwOuI8GkygUUqBjKFqxUtTdrcE');
     // [END set_public_vapid_key]
 
     // IDs of divs that display Instance ID token UI or request permission UI.
