@@ -58,6 +58,8 @@ class FirebaseServiceTest extends TestCase
 
         $data = json_decode($response->getBody()->getContents());
 
+        echo "\n" . json_encode($data);
+
         $this->assertEquals(1, $data->success);
     }
 
@@ -75,6 +77,8 @@ class FirebaseServiceTest extends TestCase
             'description' => 'Test send to Topic',
             'type' => 'test_topic'
         ]);
+
+        echo "\n" . json_encode($response->getBody()->getContents());
 
         $this->assertEquals(200, $response->getStatusCode());
     }
@@ -123,7 +127,7 @@ class FirebaseServiceTest extends TestCase
         /**
          * @var Response $response
          */
-        $response = $this->notify->removeTopic('/topics/test', [
+        $response = $this->notify->removeTopic(env('NOTIFIER_FIREBASE_TO_TOPIC'), [
             env('NOTIFIER_FIREBASE_TO_DEVICE')
         ]);
 
