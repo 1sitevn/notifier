@@ -88,9 +88,11 @@ class FirebaseServiceTest extends TestCase
         /**
          * @var Response $response
          */
-        $response = $this->notify->createTopic('/topics/test', [
+        $response = $this->notify->createTopic(env('NOTIFIER_FIREBASE_TO_TOPIC'), [
             env('NOTIFIER_FIREBASE_TO_DEVICE')
         ]);
+
+        echo "\n" . json_encode($response->getBody()->getContents());
 
         $this->assertEquals(200, $response->getStatusCode());
     }
