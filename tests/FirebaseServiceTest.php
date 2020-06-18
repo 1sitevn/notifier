@@ -63,6 +63,33 @@ class FirebaseServiceTest extends TestCase
         $this->assertEquals(1, $data->success);
     }
 
+    /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function testSendWithMultipleDevice()
+    {
+        /**
+         * @var Response $response
+         */
+        $response = $this->notify->send([
+            env('NOTIFIER_FIREBASE_TO_DEVICE'),
+            env('NOTIFIER_FIREBASE_TO_DEVICE_SECOND'),
+        ], [
+            'title' => 'Test send to Device',
+            'description' => 'Test send to Device',
+            'type' => 'test_device'
+        ], [
+            'is_ios' => true
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+
+        $data = json_decode($response->getBody()->getContents());
+
+        echo "\n" . json_encode($data);
+
+        $this->assertEquals(2, $data->success);
+    }
 
     /**
      * @throws \GuzzleHttp\Exception\GuzzleException

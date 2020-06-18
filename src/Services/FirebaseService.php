@@ -70,9 +70,14 @@ class FirebaseService implements NotificationInterface
     {
         $body = [
             'content-available' => true,
-            'priority' => 'HIGH',
-            'data' => $data
+            'priority' => 'HIGH'
         ];
+
+        if (!empty($options['is_ios'])) {
+            $body['notification'] = $data;
+        } else {
+            $body['data'] = $data;
+        }
 
         if (is_array($to)) {
             $body['registration_ids'] = $to;

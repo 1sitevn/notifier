@@ -10,6 +10,7 @@
 
         <env name="NOTIFIER_FIREBASE_KEY" value=""/>
         <env name="NOTIFIER_FIREBASE_TO_DEVICE" value=""/>
+        <env name="NOTIFIER_FIREBASE_TO_DEVICE_SECOND" value=""/>
         <env name="NOTIFIER_FIREBASE_TO_TOPIC" value=""/>
 
         <env name="NOTIFIER_CALL_CENTER_PHONE_TEST" value=""/>
