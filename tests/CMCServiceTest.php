@@ -6,11 +6,7 @@ namespace OneSite\Notifier\Tests;
 
 use GuzzleHttp\Psr7\Response;
 use OneSite\Notifier\Services\CMCService;
-use OneSite\Notifier\Services\FirebaseService;
 use PHPUnit\Framework\TestCase;
-
-require_once "helpers.php";
-
 
 /**
  * Class CMCServiceTest

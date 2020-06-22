@@ -35,5 +35,9 @@
         <env name="NOTIFIER_CMC_BRAND_NAME" value=""/>
         <env name="NOTIFIER_CMC_USERNAME" value=""/>
         <env name="NOTIFIER_CMC_PASSWORD" value=""/>
+
+        <env name="NOTIFIER_TELEGRAM_CHAT_ID" value=""/>
+        <env name="NOTIFIER_TELEGRAM_BOT_NAME" value=""/>
+        <env name="NOTIFIER_TELEGRAM_BOT_TOKEN" value=""/>
     </php>
 </phpunit>

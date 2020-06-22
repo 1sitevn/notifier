@@ -32,6 +32,12 @@ return [
             'brand_name' => env('NOTIFIER_CMC_BRAND_NAME', null),
             'username' => env('NOTIFIER_CMC_USERNAME', null),
             'password' => env('NOTIFIER_CMC_PASSWORD', null),
+        ],
+
+        'telegram' => [
+            'bot_name' => env('NOTIFIER_TELEGRAM_BOT_NAME', null),
+            'bot_token' => env('NOTIFIER_TELEGRAM_BOT_TOKEN', null),
+            'chat_id' => env('NOTIFIER_TELEGRAM_CHAT_ID', null),
         ]
     ]
 ];
