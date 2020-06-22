@@ -75,22 +75,14 @@ class TelegramServiceTest extends TestCase
      */
     public function testSendToDevice()
     {
-        $body = "    
-ID:      978E69378D
-Account: 0332162234
-Amount:  497,800đ
-Balance: 510,300đ
-Date:    2020-04-23 23:04:05
-Desc:    Nạp tiền vào tài khoản 0332162234 bằng chuyển khoản (Vietcombank)
+        $body = "
+⌛️ #pending 🦅 #deposit #978E69378D #0332162234
 
-Ngân hàng Vietcombank vừa ghi nhận một khoản tiền với thông tin:
-Mã chuyển khoản: 9P0000139067
-Số tiền: 497.800 VNĐ
-Nội dung: MBVCB391813816.9P0000139067.CT tu 0361000357442 LE MINH HAI toi 0011004443823 CT CP 9PAY
-Ví nhận tiền: 0332162234
-Ngày nhận tiền: 2020-04-24 00:00:00
-Trạng thái xử lý: Hệ thống xử lý thành công
-Xin cảm ơn!...";
+<code>OrderID: </code> 978E69378D
+<code>Account: </code> 0332162234
+<code>Desc:    </code> Nạp tiền vào tài khoản 0332162234 bằng chuyển khoản (Vietcombank)
+<code>Amount:  </code> 497,800đ
+🤩";
 
         /**
          * @var Response $response
