@@ -58,6 +58,9 @@ class TelegramService implements NotificationInterface
     /**
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * $ /newbot
+     * $ TikopAlertBot
+     * $ /688581560 @TikopAlertBot
      */
     public function getUpdates()
     {
