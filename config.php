@@ -38,6 +38,12 @@ return [
             'bot_name' => env('NOTIFIER_TELEGRAM_BOT_NAME', null),
             'bot_token' => env('NOTIFIER_TELEGRAM_BOT_TOKEN', null),
             'chat_id' => env('NOTIFIER_TELEGRAM_CHAT_ID', null),
-        ]
+        ],
+
+        'south_telecom' => [
+            'api_url' => env('NOTIFIER_SOUTH_TELECOM_API_URL', null),
+            'api_key' => env('NOTIFIER_SOUTH_TELECOM_API_KEY', null),
+            'brand_name' => env('NOTIFIER_SOUTH_TELECOM_BRAND_NAME', null),
+        ],
     ]
 ];

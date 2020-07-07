@@ -39,5 +39,10 @@
         <env name="NOTIFIER_TELEGRAM_CHAT_ID" value=""/>
         <env name="NOTIFIER_TELEGRAM_BOT_NAME" value=""/>
         <env name="NOTIFIER_TELEGRAM_BOT_TOKEN" value=""/>
+
+        <env name="NOTIFIER_SOUTH_TELECOM_TEST" value=""/>
+        <env name="NOTIFIER_SOUTH_TELECOM_API_URL" value=""/>
+        <env name="NOTIFIER_SOUTH_TELECOM_API_KEY" value=""/>
+        <env name="NOTIFIER_SOUTH_TELECOM_BRAND_NAME" value=""/>
     </php>
 </phpunit>
