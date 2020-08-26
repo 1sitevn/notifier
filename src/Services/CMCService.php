@@ -86,24 +86,36 @@ class CMCService implements NotificationInterface
 
         $data = json_decode($response->getBody()->getContents());
 
+        $metaData = [
+            'method' => 'POST',
+            'url' => $apiUrl,
+            'headers' => [],
+            'params' => $params
+        ];
+
         if ($data->Code != 1) {
             return [
                 'error' => [
                     'code' => $data->Code,
                     'message' => $data->Description
-                ]
+                ],
+                'meta_data' => $metaData
             ];
         }
 
         if ($data->Data->Status == 1) {
-            return $data;
+            return [
+                'data' => $data,
+                'meta_data' => $metaData
+            ];
         }
 
         return [
             'error' => [
                 'code' => $data->Data->Status,
                 'message' => $data->Data->StatusDescription
-            ]
+            ],
+            'meta_data' => $metaData
         ];
     }
 
