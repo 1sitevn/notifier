@@ -75,7 +75,7 @@ class CMCService implements NotificationInterface
             'pass' => $this->password,
         ];
 
-        return $this->client->request('POST', $apiUrl, [
+        $response = $this->client->request('POST', $apiUrl, [
             'http_errors' => false,
             'verify' => false,
             'headers' => [
@@ -83,6 +83,28 @@ class CMCService implements NotificationInterface
             ],
             'body' => json_encode($params)
         ]);
+
+        $data = json_decode($response->getBody()->getContents());
+
+        if ($data->Code != 1) {
+            return [
+                'error' => [
+                    'code' => $data->Code,
+                    'message' => $data->Description
+                ]
+            ];
+        }
+
+        if ($data->Data->Status == 1) {
+            return $data;
+        }
+
+        return [
+            'error' => [
+                'code' => $data->Data->Status,
+                'message' => $data->Data->StatusDescription
+            ]
+        ];
     }
 
 }

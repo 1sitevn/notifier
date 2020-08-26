@@ -52,13 +52,9 @@ class CMCServiceTest extends TestCase
             'body' => 'Ma xac nhan cua ban la 123456'
         ]);
 
-        $this->assertEquals(200, $response->getStatusCode());
+        $isSuccess = !empty($response['error']) ? false : true;
 
-        $data = json_decode($response->getBody()->getContents());
-
-        echo "\n" . json_encode($data);
-
-        $this->assertEquals(1, $data->Code);
+        $this->assertTrue($isSuccess);
     }
 
 
@@ -76,12 +72,8 @@ class CMCServiceTest extends TestCase
             'utf8' => true
         ]);
 
-        $this->assertEquals(200, $response->getStatusCode());
+        $isSuccess = !empty($response['error']) ? false : true;
 
-        $data = json_decode($response->getBody()->getContents());
-
-        echo "\n" . json_encode($data);
-
-        $this->assertEquals(1, $data->Code);
+        $this->assertTrue($isSuccess);
     }
 }

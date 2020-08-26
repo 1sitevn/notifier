@@ -64,7 +64,7 @@ class SouthTelecomService implements NotificationInterface
             'text' => !empty($data['body']) ? $data['body'] : ''
         ];
 
-        return $this->client->request('POST', $apiUrl, [
+        $response = $this->client->request('POST', $apiUrl, [
             'http_errors' => false,
             'verify' => false,
             'headers' => [
@@ -74,6 +74,19 @@ class SouthTelecomService implements NotificationInterface
             ],
             'body' => json_encode($params)
         ]);
+
+        $data = json_decode($response->getBody()->getContents());
+
+        if ($data->status == 1) {
+            return $data;
+        }
+
+        return [
+            'error' => [
+                'code' => $data->errorcode,
+                'message' => $data->description
+            ]
+        ];
     }
 
 }
