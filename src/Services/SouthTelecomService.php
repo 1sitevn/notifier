@@ -67,7 +67,7 @@ class SouthTelecomService implements NotificationInterface
         $headers = [
             "Content-Type" => "application/json",
             "Accept" => "application/json",
-            "Authorization" => "Basic =" . $this->apiKey,
+            "Authorization" => "Basic " . $this->apiKey,
         ];
         $response = $this->client->request('POST', $apiUrl, [
             'http_errors' => false,
