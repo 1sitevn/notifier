@@ -76,6 +76,7 @@ class FirebaseService implements NotificationInterface
         if (!empty($options['is_ios'])) {
             $body['notification'] = $data;
         } else {
+            $body['notification'] = $data;
             $body['data'] = $data;
         }
 
