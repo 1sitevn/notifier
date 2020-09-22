@@ -12,6 +12,7 @@ use OneSite\Notifier\Contracts\NotificationInterface;
  * @package OneSite\Notifier\Services
  * https://medium.com/@wk0/send-and-receive-messages-with-the-telegram-api-17de9102ab78
  * https://medium.com/@xabaras/sending-a-message-to-a-telegram-channel-the-easy-way-eb0a0b32968
+ * Invite @getidsbo or @RawDataBot to your group and get your group id in sended chat id field.
  */
 class TelegramService implements NotificationInterface
 {
