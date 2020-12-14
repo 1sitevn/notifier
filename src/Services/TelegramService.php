@@ -83,7 +83,8 @@ class TelegramService implements NotificationInterface
             'query' => [
                 'chat_id' => $to,
                 'text' => !empty($data['body']) ? $data['body'] : '',
-                'parse_mode' => 'HTML'
+                'parse_mode' => 'HTML',
+                'disable_web_page_preview' => true
             ]
         ]);
     }
